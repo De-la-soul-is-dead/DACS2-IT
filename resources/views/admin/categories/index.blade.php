@@ -37,11 +37,8 @@
                                 id="form-delete{{ $item->id }}" method="post">
                                 @csrf
                                 @method('delete')
-
                             </form>
                             <button class="btn btn-delete btn-danger" type="submit" data-id={{ $item->id }}>Delete</button>
-
-
                         </td>
                     </tr>
                 @endforeach

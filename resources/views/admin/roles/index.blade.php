@@ -30,5 +30,13 @@
                                 method="post">
                                 @csrf
                                 @method('delete')
+                            </form>
+                            <button class="btn btn-delete btn-danger" data-id={{ $role->id }}>Delete</button>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+            {{ $roles->links() }}
+        </div>
     </div>
 @endsection

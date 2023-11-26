@@ -133,7 +133,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('plugin/ckeditor5-build-classic/ckeditor.js') }}"></script>
     <script>
-        // let sizes = @json($product->details);
         let sizes = @json($product->details);
     </script>
     <script src="{{ asset('admin/assets/js/product/product.js') }}"></script>

@@ -4,11 +4,10 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Models\Product;
-use App\Models\ProductDetail;
+use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\ProductController as ClientProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Intervention\Image\Size;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,17 +20,15 @@ use Intervention\Image\Size;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('client.home');
+
+Route::get('product/{category_id}', [ClientProductController::class, 'index'])->name('client.products.index');
+
+Route::get('product-detail/{id}', [ClientProductController::class, 'show'])->name('client.products.show');
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard.index');
 })->name('dashboard');
-
-Route::get('/home', function () {
-    return view('client.layouts.app');
-});
 
 
 Auth::routes();
@@ -40,18 +37,3 @@ Route::resource('roles', RoleController::class);
 Route::resource('users', UserController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('products', ProductController::class);
-
-
-
-
-Route::post('/create ', function(Request $request){
-    $dataCreate = $request->except('sizes');
-    $sizes = $request->sizes ? json_decode($request->sizes) : [];
-    $product = Product::create($dataCreate);
-    $sizeArray = [];
-    foreach($sizes as $size)
-    {
-        $sizeArray[] = ['size' => $size->size, 'quantity' => $size->quantity, 'product_id' => $product->id];
-    }
-    ProductDetail::insert($sizeArray);
-})->name('test');

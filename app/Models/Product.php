@@ -41,5 +41,9 @@ class Product extends Model
     // {
     //     return $this->de()->sync($categoryIds);
     // }
-
+    
+    public function getBy($dataSearch, $categoryId)
+    {
+        return $this->whereHas('categories', fn($q) => $q->where('category_id', $categoryId))->paginate(10);
+    }
 }

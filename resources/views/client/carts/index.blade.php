@@ -37,13 +37,13 @@
                         @if ($item->product->sale)
                         <p style="
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ">
-                            ">
-                            ${{ $item->product->sale_price }}
+                            "${{ $item->product->sale_price }}"
+                            
                         </p>
                         @endif
                     </td>
                     <td class="align-middle">{{ $item->product_size }}</td>
-                    <td class="align-middle">{{ $item->product->sale }}</td>
+                    <td class="align-middle">{{ $item->product->sale }}%</td>
                     <td class="align-middle">
                         <div class="input-group quantity mx-auto" style="width: 100px;">
                             <div class="input-group-btn">

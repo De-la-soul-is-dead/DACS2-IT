@@ -31,4 +31,11 @@ class HomeController extends Controller
 
         return view('client.home.index', compact('products'));
     }
+    
+    public function productCount($category_id)
+    {
+        $productCount = $this->product->where('category_id', $category_id)->count();
+
+        return view('client.products.index', compact('productCount'));
+    }
 }

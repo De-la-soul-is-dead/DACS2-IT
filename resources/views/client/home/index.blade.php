@@ -34,35 +34,35 @@
       <div class="row px-xl-5 pb-3">
           <div class="col-lg-4 col-md-6 pb-1">
               <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                  <p class="text-right">15 Products</p>
-                  <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                  <!-- <p class="text-right">15 Products</p> -->
+                  <a href="{{ route('client.products.index', ['category_id' => 31]) }}" class="cat-img position-relative overflow-hidden mb-3">
                       <img class="img-fluid" src="{{ asset('client/img/cat-1.jpg') }}" alt="">
                   </a>
-                  <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
+                  <h5 class="font-weight-semi-bold m-0">Men's </h5>
               </div>
           </div>
           <div class="col-lg-4 col-md-6 pb-1">
               <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                  <p class="text-right">15 Products</p>
-                  <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                  <!-- <p class="text-right">15 Products</p> -->
+                  <a href="{{ route('client.products.index', ['category_id' => 32]) }}" class="cat-img position-relative overflow-hidden mb-3">
                       <img class="img-fluid" src="{{ asset('client/img/cat-2.jpg') }}" alt="">
                   </a>
-                  <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
+                  <h5 class="font-weight-semi-bold m-0">Women's </h5>
               </div>
           </div>
           <div class="col-lg-4 col-md-6 pb-1">
               <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                  <p class="text-right">15 Products</p>
-                  <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                  <!-- <p class="text-right">15 Products</p> -->
+                  <a href="{{ route('client.products.index', ['category_id' => 36]) }}" class="cat-img position-relative overflow-hidden mb-3">
                       <img class="img-fluid" src="{{ asset('client/img/cat-3.jpg') }}" alt="">
                   </a>
-                  <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
+                  <h5 class="font-weight-semi-bold m-0">Baby's </h5>
               </div>
           </div>
           <div class="col-lg-4 col-md-6 pb-1">
               <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                  <p class="text-right">15 Products</p>
-                  <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                  <!-- <p class="text-right">15 Products</p> -->
+                  <a href="{{ route('client.products.index', ['category_id' => 37]) }}" class="cat-img position-relative overflow-hidden mb-3">
                       <img class="img-fluid" src="{{ asset('client/img/cat-4.jpg') }}" alt="">
                   </a>
                   <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
@@ -70,8 +70,8 @@
           </div>
           <div class="col-lg-4 col-md-6 pb-1">
               <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                  <p class="text-right">15 Products</p>
-                  <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                  <!-- <p class="text-right">15 Products</p> -->
+                  <a href="{{ route('client.products.index', ['category_id' => 38]) }}" class="cat-img position-relative overflow-hidden mb-3">
                       <img class="img-fluid" src="{{ asset('client/img/cat-5.jpg') }}" alt="">
                   </a>
                   <h5 class="font-weight-semi-bold m-0">Bags</h5>
@@ -79,8 +79,9 @@
           </div>
           <div class="col-lg-4 col-md-6 pb-1">
               <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                  <p class="text-right">15 Products</p>
-                  <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                  <!-- <p class="text-right">15 Products</p> -->
+                  <!-- <a href="" class="cat-img position-relative overflow-hidden mb-3"> -->
+                  <a href="{{ route('client.products.index', ['category_id' => 39]) }}" class="cat-img position-relative overflow-hidden mb-3">
                       <img class="img-fluid" src="{{ asset('client/img/cat-6.jpg') }}" alt="">
                   </a>
                   <h5 class="font-weight-semi-bold m-0">Shoes</h5>
@@ -128,8 +129,10 @@
                   <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                       <h6 class="text-truncate mb-3">{{ $item->name }}</h6>
                       <div class="d-flex justify-content-center">
-                          <h6>${{ $item->price }}</h6>
                           <h6 class="text-muted ml-2"><del>${{ $item->price }}</del></h6>
+                          <h6><span>&nbsp;</span>${{ $item->sale_price }}</h6>
+                          <h9 style="color: red;"><span>&nbsp;</span>{{ $item->sale }}% off</h9>
+                          
                       </div>
                   </div>
                   <div class="card-footer d-flex justify-content-between bg-light border">

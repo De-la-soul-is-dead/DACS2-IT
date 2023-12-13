@@ -30,12 +30,7 @@
                         </div>
 
                     </div>
-                    <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
-                        <i class="fa fa-2x fa-angle-left text-dark"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#product-carousel" data-slide="next">
-                        <i class="fa fa-2x fa-angle-right text-dark"></i>
-                    </a>
+                   
                 </div>
             </div>
 
@@ -44,8 +39,11 @@
                 <div class="d-flex mb-3">
 
                 </div>
-                <h3 class="font-weight-semi-bold mb-4">${{ $product->price }}</h3>
-
+                <!-- <h3 class="font-weight-semi-bold mb-4">${{ $product->price }}</h3> -->
+                <!-- <h3 class="text-muted ml-2"><del>${{ $product->price }}</del></h3>
+                <h3>${{ $product->sale_price }}</h3> -->
+                <h3 class="text-muted ml-2 d-inline-block"><del>${{ $product->price }}</del></h3>
+<h3 class="d-inline-block">${{ $product->sale_price }}</h3>
 
                 <div class="d-flex mb-4">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Size:</p>

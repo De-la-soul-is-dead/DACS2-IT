@@ -160,13 +160,13 @@ class CartController extends Controller
         $coupon =  $this->coupon->firstWithExperyDate($name, auth()->user()->id);
         if($coupon)
         {
-            $message = 'Áp Mã giảm giá thành công !';
+            $message = 'Apply discount code successfully!';
             Session::put('coupon_id', $coupon->id);
             Session::put('discount_amount_price', $coupon->value);
             Session::put('coupon_code' , $coupon->name);
         }else{
             Session::forget(['coupon_id', 'discount_amount_price', 'coupon_code']);
-            $message = 'Mã giảm giá không tồn tại hoặc hết hạn!';
+            $message = 'Discount code does not exist or has expired!';
         }
         return redirect()->route('client.carts.index')->with([
             'message' => $message,
@@ -197,7 +197,7 @@ class CartController extends Controller
         $cart = $this->cart->firtOrCreateBy(auth()->user()->id);
         $cart->products()->delete();
         Session::forget(['coupon_id', 'discount_amount_price', 'coupon_code']);
-        Session::flash('success', 'Đặt hàng thành công!');
+        Session::flash('success', 'Order Success!');
         return redirect()->route('client.home')->with(['message' => 'create coupon success']);
 
     }
